@@ -71,7 +71,59 @@ body {
 .menu-card-text {}
 
 footer {
+    position: fixed;
+    bottom: 0;
     width: 100%;
     height: 3em;
     background-color: var(--secondary-color);
 }
+
+.container {
+    position: fixed;
+    bottom: 0;
+    width: 500px;
+    height: 42px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: row;
+  }
+  .search-field {
+    width: 50%;
+    padding: 10px 35px 10px 15px;
+    border: none;
+    border-radius: 100px;
+    outline: none;
+  }
+  
+  .search-button {
+    background: transparent;
+    border: none;
+    outline: none;
+    margin-left: -33px;
+  }
+  
+  .search-button img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+  }
+
+  /* .container img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+} */
+
+    .flags {
+        width: 50vw;
+    }
+
+    .flags img {
+        margin-top: 5px;
+      margin-left: 10%;
+      width: 35px;
+      height: 30px;
+      object-fit: cover;
+    }
