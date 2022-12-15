@@ -1,0 +1,13 @@
+.main-header {
+    margin-left: 16%;
+    font-size: 40px;
+    color: red;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
