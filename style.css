@@ -121,9 +121,10 @@ footer {
     }
 
     .flags img {
-        margin-top: 5px;
+        margin-top: 2px;
       margin-left: 10%;
       width: 35px;
       height: 30px;
       object-fit: cover;
+      border-radius: 30%;
     }
