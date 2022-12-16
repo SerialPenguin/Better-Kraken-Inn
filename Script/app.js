@@ -31,7 +31,7 @@ function createCard(meny) {
 /* test code */
 function createDOMCard(container) {
   // let test = bbqs.length;
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < 5; i++) {
     let bbqsCards = createCard(bbqs[i]);
     let burgersCards = createCard(burgers[i]);
 
