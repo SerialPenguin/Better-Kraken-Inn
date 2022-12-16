@@ -8,22 +8,29 @@ function createCard(meny) {
   const card = document.createElement("article");
   const cardHeader = document.createElement("h3");
   const cardPara = document.createElement("p");
+  const orderContainer = document.createElement('div');
   const cardSubPara = document.createElement("p");
+  const cardButton = document.createElement('button');
   
   card.style.backgroundImage = `url('${meny.img}')`;
 
   cardHeader.textContent = meny.name;
   cardPara.textContent = meny.dsc;
   cardSubPara.textContent = meny.price;
+  cardButton.textContent = "ORDER NOW!";
 
   card.appendChild(cardHeader);
   card.appendChild(cardPara);
-  card.appendChild(cardSubPara);
+  card.appendChild(orderContainer);
+  orderContainer.appendChild(cardSubPara);
+  orderContainer.appendChild(cardButton);
 
   card.className = "menu-card";
   cardHeader.className = "menu-card-header";
   cardPara.className = "menu-card-text";
+  orderContainer.className = "order-container";
   cardSubPara.className = "menu-card-price";
+  cardButton.className = "menu-button";
 
   return card;
 }
