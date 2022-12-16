@@ -246,3 +246,7 @@ footer {
       .dropdown-menu:hover .dropdown-btn {
         background-color: var(--secondary-color);
       }
+
+      .display-none{
+        display: none;
+    }
