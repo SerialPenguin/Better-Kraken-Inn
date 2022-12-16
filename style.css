@@ -4,7 +4,7 @@
 
 :root {
     --main-color:#619077;
-    --secondary-color:#a47148;
+    --secondary-color:#332;
     /* --text-color:#333; */
     --text-color:#FFF;
     --header-color:#FFF;
@@ -87,6 +87,21 @@ body {
   color: var(--text-color);
   text-shadow: #000 1px 0 10px;
   font-size: 1.2em;
+}
+
+.order-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu-button {
+  line-height: 3em;
+  padding: 0 1em;
+  color: var(--text-color);
+  background: linear-gradient(0.25turn, #938A76, #443);
+  border: 1px solid #FFF;
+  border-radius: 5px;
 }
 
 .menu-card-price {

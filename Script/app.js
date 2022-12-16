@@ -17,21 +17,27 @@ function createCard(meny) {
   const cardHeader = document.createElement("h3");
   const cardPara = document.createElement("p");
   const cardSubPara = document.createElement("p");
+  const cardButton = document.createElement("button");
 
   card.style.backgroundImage = `url('${meny.img}')`;
 
   cardHeader.textContent = meny.name;
   cardPara.textContent = meny.dsc;
   cardSubPara.textContent = meny.price;
+  cardButton.textContent = "ORDER NOW!";
 
   card.appendChild(cardHeader);
   card.appendChild(cardPara);
-  card.appendChild(cardSubPara);
+  card.appendChild(orderContainer);
+  orderContainer.appendChild(cardSubPara);
+  orderContainer.appendChild(cardButton);
 
   card.className = "menu-card";
   cardHeader.className = "menu-card-header";
   cardPara.className = "menu-card-text";
+  orderContainer.className = "order-container";
   cardSubPara.className = "menu-card-price";
+  cardButton.className = "menu-button";
 
   return card;
 }
@@ -97,3 +103,16 @@ Array.prototype.forEach.call(flags, function (e) {
     languageSelect.dispatchEvent(new Event("change"));
   });
 });
+function search_product() {
+  let input = document.getElementById("searchbar").value;
+  input = input.toLowerCase();
+  let x = document.getElementsByClassName("menu-card");
+
+  for (i = 0; i < x.length; i++) {
+    if (!x[i].innerHTML.toLowerCase().includes(input)) {
+      x[i].style.display = "none";
+    } else {
+      x[i].style.display = "list-item";
+    }
+  }
+}

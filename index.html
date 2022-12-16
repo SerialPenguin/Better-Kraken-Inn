@@ -15,9 +15,7 @@
   <body>
     <header>
       <h1 class="main-header">The Kraken Inn</h1>
-      <div class="language-toggle">
-        <a href=""><img src=""></a>
-      </div>
+      <button></button>
       <nav class="main-nav">
         <ul class="nav-list">
           <li class="list-item">Hem</li>
@@ -37,7 +35,7 @@
       <footer>
         <div class="container">
           <form action="/" method="GET" class="form">
-            <input type="search" placeholder="Sök" class="search-field" />
+            <input id="searchbar" type="text" name="search" onkeyup="search_product()" placeholder="Sök" class="search-field" />
             <button type="submit" class="search-button">
               <img class="search-img" src="assets/search.webp">
               </button>
