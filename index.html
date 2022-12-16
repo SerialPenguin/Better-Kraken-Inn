@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -36,6 +36,17 @@
             <button type="submit" class="search-button">
               <img class="search-img" src="assets/search.webp">
               </button>
+              <div id="google_translate_element"></div>
+              <script type="text/javascript">
+                 function googleTranslateElementInit() {
+                     new google.translate.TranslateElement({ pageLanguage: 'sv' }, 'google_translate_element');
+                 }
+              </script>
+              <script type="text/javascript"
+                 src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+              <div class ="flag">
+               <a href="#" class ="flag_link sv" data-lang="sv"> <img class ="img-fluid" src="/assets/Flag_of_Sweden.svg.png"></a>
+                <a href="#" class ="flag_link en" data-lang="en"> <img class ="img-fluid" src="/assets/Flag_of_the_United_Kingdom.svg.webp"></a>
               <div class ="flags">
               <img class ="swedish-flag" src="assets/Flag_of_Sweden.svg.png">
               <img class ="english-flag" src="assets/Flag_of_the_United_Kingdom.svg.webp">
