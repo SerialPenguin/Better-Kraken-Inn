@@ -1,12 +1,63 @@
 <!-- @format -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <script src="Script/db.js" defer></script>
+    <script src="Script/app.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>the Kraken Inn</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1 class="main-header">The Kraken Inn</h1>
+      <div class="language-toggle">
+        <a href=""><img src=""></a>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li class="list-item">Hem</li>
+          <div class="dropdown-menu">
+            <button class="dropdown-btn">Mat</button>
+            <div class="dropdown-content">
+              <a href="#">BBQ</a>
+              <a href="#">Burger</a>
+              <a href="#">Steak</a>
+              <a href="#">Dessert</a>
+              <!-- <li class="list-item">Mat</li> -->
+            </div>
+          </div>
+          <li class="list-item">Dryck</li>
+        </ul>
+      </nav>
+      </header>
+      <main class="main-content">
+        <!-- Generera innehållet i Javascript -->¨
+      </main>
+      <footer>
+        <div class="container">
+          <form action="/" method="GET" class="form">
+            <input type="search" placeholder="Sök" class="search-field" />
+            <button type="submit" class="search-button">
+              <img class="search-img" src="assets/search.webp">
+              </button>
+              <div id="google_translate_element"></div>
+              <script type="text/javascript">
+                 function googleTranslateElementInit() {
+                     new google.translate.TranslateElement({ pageLanguage: 'sv' }, 'google_translate_element');
+                 }
+              </script>
+              <script type="text/javascript"
+                 src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+              <div class ="flag">
+               <a href="#" class ="flag_link sv" data-lang="sv"> <img class ="img-fluid" src="assets/Flag_of_Sweden.svg.png"></a>
+                <a href="#" class ="flag_link en" data-lang="en"> <img class ="img-fluid" src="assets/Flag_of_the_United_Kingdom.svg.webp"></a>
+            </div>
+        </div>
+      </footer>
+  </body>
 </html>
