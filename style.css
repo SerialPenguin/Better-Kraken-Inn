@@ -116,11 +116,11 @@ footer {
     object-fit: cover;
 } */
 
-    .flags {
+    .flag {
         width: 50vw;
     }
 
-    .flags img {
+    .flag img {
         margin-top: 2px;
       margin-left: 10%;
       width: 35px;
@@ -128,3 +128,14 @@ footer {
       object-fit: cover;
       border-radius: 30%;
     }
+
+    #google_translate_element{
+      display: none;
+    }
+
+    .goog-te-banner-frame.skiptranslate {
+      display: none !important;
+      } 
+  body {
+      top: 0px !important; 
+      }

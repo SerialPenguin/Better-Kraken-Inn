@@ -33,3 +33,19 @@ function createDOMCard(container) {
 }
 
 createDOMCard(mainContent);
+
+
+var flags = document.getElementsByClassName('flag_link');
+
+
+Array.prototype.forEach.call(flags, function(e){
+  e.addEventListener('click', function(){
+    let lang = e.getAttribute('data-lang'); 
+    console.log(lang);
+    let languageSelect = document.querySelector("select.goog-te-combo");
+    console.log(languageSelect);
+    languageSelect.value = lang; 
+    languageSelect.dispatchEvent(new Event("change"));
+  }); 
+});
+
