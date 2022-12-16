@@ -58,10 +58,14 @@ body {
 .main-content {}
 
 .menu-card {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     background-color: var(--secondary-color);
     margin: 5%;
     padding: 1em;
     border-radius: 10px;
+    aspect-ratio: 2/1;
 }
 
 .menu-card-header {
