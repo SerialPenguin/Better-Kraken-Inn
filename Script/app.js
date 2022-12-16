@@ -1,7 +1,15 @@
 const mainContent = document.querySelector(".main-content");
+const bbqContainer = document.querySelector(".bbq-container");
+const burgerContainer = document.querySelector(".burger-container");
+const dessertContainer = document.querySelector(".dessert-container");
+const steakContainer = document.querySelector(".steak-container");
+const drinksContainer = document.querySelector(".drinks-container");
 
 let bbqs = db.bbqs;
 let burgers = db.burgers;
+let dessert = db.desserts;
+let steaks = db.steaks;
+let drinks = db.drinks;
 
 function createCard(meny) {
   // CREATES A TEMPLATE FOR EACH CARD
@@ -9,7 +17,7 @@ function createCard(meny) {
   const cardHeader = document.createElement("h3");
   const cardPara = document.createElement("p");
   const cardSubPara = document.createElement("p");
-  
+
   card.style.backgroundImage = `url('${meny.img}')`;
 
   cardHeader.textContent = meny.name;
@@ -28,32 +36,64 @@ function createCard(meny) {
   return card;
 }
 
-/* test code */
-function createDOMCard(container) {
-  // let test = bbqs.length;
-  for (let i = 0; i < 5; i++) {
+function createBbqsDOMCard(container) {
+  for (let i = 0; i < 12; i++) {
     let bbqsCards = createCard(bbqs[i]);
-    let burgersCards = createCard(burgers[i]);
 
     container.append(bbqsCards);
+  }
+}
+
+function createDessertDOMCard(container) {
+  for (let i = 0; i < 12; i++) {
+    let dessertCards = createCard(dessert[i]);
+
+    container.append(dessertCards);
+  }
+}
+
+function createBurgerDOMCard(container) {
+  for (let i = 0; i < 12; i++) {
+    let burgersCards = createCard(burgers[i]);
+
     container.append(burgersCards);
   }
 }
 
-createDOMCard(mainContent);
+function createSteaksDOMCard(container) {
+  for (let i = 0; i < 12; i++) {
+    let steaksCards = createCard(steaks[i]);
 
+    container.append(steaksCards);
+  }
+}
 
-var flags = document.getElementsByClassName('flag_link');
+function createDrinksDOMCard(container) {
+  for (let i = 0; i < 12; i++) {
+    let drinksCards = createCard(drinks[i]);
 
+    container.append(drinksCards);
+  }
+}
 
-Array.prototype.forEach.call(flags, function(e){
-  e.addEventListener('click', function(){
-    let lang = e.getAttribute('data-lang'); 
+function initializeCards() {
+  createBbqsDOMCard(bbqContainer);
+  createBurgerDOMCard(burgerContainer);
+  createDessertDOMCard(dessertContainer);
+  createSteaksDOMCard(steakContainer);
+  createDrinksDOMCard(drinksContainer);
+}
+initializeCards();
+
+var flags = document.getElementsByClassName("flag_link");
+
+Array.prototype.forEach.call(flags, function (e) {
+  e.addEventListener("click", function () {
+    let lang = e.getAttribute("data-lang");
     console.log(lang);
     let languageSelect = document.querySelector("select.goog-te-combo");
     console.log(languageSelect);
-    languageSelect.value = lang; 
+    languageSelect.value = lang;
     languageSelect.dispatchEvent(new Event("change"));
-  }); 
+  });
 });
-
