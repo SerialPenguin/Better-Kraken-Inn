@@ -21,6 +21,14 @@ body {
     min-height: 100vh;
 }
 
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  line-height: 3em;
+}
+
 .main-header {
     color: var(--header-color);
     text-align: center;
@@ -30,7 +38,11 @@ body {
     text-shadow: 4px 4px 10px #000000;
 }
 
-.language-toggle {}
+.tab-icon {
+  font-size: 3em;
+  font-weight: 600;
+  text-shadow: #000 1px 0 10px;
+}
 
 .main-nav {
     border-bottom: 1px solid #FFF;
