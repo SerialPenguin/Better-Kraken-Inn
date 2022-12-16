@@ -9,8 +9,8 @@ function createCard(meny) {
   const cardHeader = document.createElement("h3");
   const cardPara = document.createElement("p");
   const cardSubPara = document.createElement("p");
-
-  card.innerHTML = `<img class ="card-img" src="${meny.img}" alt="${meny.id}" width = "100">`;
+  
+  card.style.backgroundImage = `url('${meny.img}')`;
 
   cardHeader.textContent = meny.name;
   cardPara.textContent = meny.dsc;
@@ -21,6 +21,8 @@ function createCard(meny) {
   card.appendChild(cardSubPara);
 
   card.className = "menu-card";
+  cardHeader.className = "menu-card-header";
+  cardPara.className = "menu-card-text";
 
   return card;
 }
