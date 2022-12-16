@@ -1,34 +1,42 @@
 const mainContent = document.querySelector(".main-content");
 
+let bbqs = db.bbqs;
+let burgers = db.burgers;
+
 function createCard(meny) {
   // CREATES A TEMPLATE FOR EACH CARD
   const card = document.createElement("article");
   const cardHeader = document.createElement("h3");
   const cardPara = document.createElement("p");
   const cardSubPara = document.createElement("p");
+  
+  card.style.backgroundImage = `url('${meny.img}')`;
 
-  card.innerHTML = `<img class ="card-img" src="${meny.imgSrc}" alt="${meny.alt}" width = "100">`;
-
-  cardHeader.textContent = meny.title;
-  cardPara.textContent = meny.para;
-  cardSubPara.textContent = meny.subCat;
+  cardHeader.textContent = meny.name;
+  cardPara.textContent = meny.dsc;
+  cardSubPara.textContent = meny.price;
 
   card.appendChild(cardHeader);
   card.appendChild(cardPara);
   card.appendChild(cardSubPara);
 
   card.className = "menu-card";
+  cardHeader.className = "menu-card-header";
+  cardPara.className = "menu-card-text";
+  cardSubPara.className = "menu-card-price";
 
   return card;
 }
 
 /* test code */
 function createDOMCard(container) {
-  let test = meny.length;
-  for (let i = 0; i < test; i++) {
-    let cards = createCard(meny[i]);
+  // let test = bbqs.length;
+  for (let i = 0; i < 5; i++) {
+    let bbqsCards = createCard(bbqs[i]);
+    let burgersCards = createCard(burgers[i]);
 
-    container.append(cards);
+    container.append(bbqsCards);
+    container.append(burgersCards);
   }
 }
 
