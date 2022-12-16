@@ -4,7 +4,8 @@
 
 :root {
     --main-color:#619077;
-    --secondary-color:#332;
+    --secondary-color:#938A76;
+    /* --secondary-color:#a47148; */
     /* --text-color:#333; */
     --text-color:#FFF;
     --header-color:#FFF;
@@ -195,4 +196,53 @@ footer {
       } 
   body {
       top: 0px !important; 
+      }
+
+      /* Dropdown-meny knapp för mat */
+      .dropdown-btn {
+        background-color: var(--secondary-color);
+        color: white;
+        font-size: 0.9em;
+        border: 1px solid #FFF;
+        border-bottom: none;
+        border-radius: 10px 10px 0 0;
+        padding: 0 2.5em;
+        width: 100%;
+        text-align: center;
+        line-height: 3em;
+        cursor: pointer;
+      }
+      
+      .dropdown-menu {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #938a76ea;
+        min-width: 115px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+        color: black;
+      }
+      
+      .dropdown-menu:hover .dropdown-content {
+        display: block;
+      }
+      
+      .dropdown-menu:hover .dropdown-btn {
+        background-color: var(--secondary-color);
       }
