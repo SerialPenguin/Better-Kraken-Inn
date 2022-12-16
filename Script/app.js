@@ -23,6 +23,7 @@ function createCard(meny) {
   card.className = "menu-card";
   cardHeader.className = "menu-card-header";
   cardPara.className = "menu-card-text";
+  cardSubPara.className = "menu-card-price";
 
   return card;
 }
