@@ -32,7 +32,7 @@
       <footer>
         <div class="container">
           <form action="/" method="GET" class="form">
-            <input type="search" placeholder="Sök" class="search-field" />
+            <input id="searchbar" type="text" name="search" onkeyup="search_product()" placeholder="Sök" class="search-field" />
             <button type="submit" class="search-button">
               <img class="search-img" src="assets/search.webp">
               </button>
@@ -45,8 +45,8 @@
               <script type="text/javascript"
                  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
               <div class ="flag">
-               <a href="#" class ="flag_link sv" data-lang="sv"> <img class ="img-fluid" src="/assets/Flag_of_Sweden.svg.png"></a>
-                <a href="#" class ="flag_link en" data-lang="en"> <img class ="img-fluid" src="/assets/Flag_of_the_United_Kingdom.svg.webp"></a>
+               <a href="#" class ="flag_link sv" data-lang="sv"> <img class ="img-fluid" src="assets/Flag_of_Sweden.svg.png"></a>
+                <a href="#" class ="flag_link en" data-lang="en"> <img class ="img-fluid" src="assets/Flag_of_the_United_Kingdom.svg.webp"></a>
             </div>
         </div>
       </footer>
