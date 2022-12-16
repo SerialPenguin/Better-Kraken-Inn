@@ -18,6 +18,7 @@ function createCard(meny) {
   const cardPara = document.createElement("p");
   const cardSubPara = document.createElement("p");
   const cardButton = document.createElement("button");
+  const orderContainer = document.createElement("div");
 
   card.style.backgroundImage = `url('${meny.img}')`;
 
