@@ -4,7 +4,7 @@
 
 :root {
     --main-color:#619077;
-    --secondary-color:#a47148;
+    --secondary-color:#332;
     /* --text-color:#333; */
     --text-color:#FFF;
     --header-color:#FFF;
@@ -99,7 +99,7 @@ body {
   line-height: 3em;
   padding: 0 1em;
   color: var(--text-color);
-  background: linear-gradient(0.25turn, #060, #030);
+  background: linear-gradient(0.25turn, #938A76, #443);
   border: 1px solid #FFF;
   border-radius: 5px;
 }
