@@ -66,13 +66,34 @@ body {
     padding: 1em;
     border-radius: 10px;
     aspect-ratio: 2/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #FFF;
 }
 
 .menu-card-header {
     color: var(--header-color);
+    text-shadow: #000 1px 0 10px;
+    font-size: 2em;
+    font-weight: 800;
 }
 
-.menu-card-text {}
+.menu-card-text {
+  color: var(--text-color);
+  text-shadow: #000 1px 0 10px;
+  font-size: 1.2em;
+}
+
+.menu-card-price {
+  color: var(--text-color);
+  text-shadow: #000 1px 0 10px;
+  font-size: 1.5em;
+}
+
+.menu-card-price::after {
+  content: " SEK"
+}
 
 footer {
     position: fixed;
