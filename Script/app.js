@@ -13,6 +13,7 @@ const steakMenyBtn = document.querySelector(".steak-meny-btn");
 const dessertMenyBtn = document.querySelector(".dessert-meny-btn");
 const drinkMenyBtn = document.querySelector(".drink-meny-btn");
 const homeBtn = document.querySelector(".home-btn");
+const tabIcon = document.querySelector('.tab-icon');
 
 let bbqs = db.bbqs;
 let burgers = db.burgers;
@@ -123,6 +124,14 @@ function hide() {
   drinksContainer.classList.add("display-none");
   featuredItemContainer.classList.add("display-none");
 }
+
+tabIcon.addEventListener('click', () => {
+  tabIcon.classList.add('vibrate');
+
+  setTimeout(function(){
+    tabIcon.classList.remove('vibrate');
+}, 210);
+})
 
 bbqMenyBtn.addEventListener("click", () => {
   hide();

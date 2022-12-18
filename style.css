@@ -43,6 +43,7 @@ body {
   font-size: 3em;
   font-weight: 600;
   text-shadow: #000 1px 0 10px;
+  cursor: pointer;
 }
 
 .main-nav {
@@ -68,6 +69,7 @@ body {
     width: 30%;
     text-align: center;
     line-height: 2em;
+    cursor: pointer;
 }
 
 .main-content {
@@ -115,6 +117,7 @@ body {
   background: linear-gradient(0.25turn, #938A76, #443);
   border: 1px solid #FFF;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .menu-card-price {
@@ -249,4 +252,17 @@ footer {
 
       .display-none{
         display: none;
+    }
+
+    @keyframes vibrate {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, -2px); }
+      80% { transform: translate(2px, 2px); }
+      100% { transform: translate(0); }
+    }
+    
+    .vibrate {
+      animation: vibrate 0.2s linear;
     }
