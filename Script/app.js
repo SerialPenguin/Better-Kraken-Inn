@@ -14,6 +14,7 @@ const dessertMenyBtn = document.querySelector(".dessert-meny-btn");
 const drinkMenyBtn = document.querySelector(".drink-meny-btn");
 const homeBtn = document.querySelector(".home-btn");
 const tabIcon = document.querySelector(".tab-icon");
+>>>>>>> 8bb083a5433f4975e38e869f95f769925ab6aeb0
 
 let bbqs = db.bbqs;
 let burgers = db.burgers;
