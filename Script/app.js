@@ -4,6 +4,7 @@ const burgerContainer = document.querySelector(".burger-container");
 const dessertContainer = document.querySelector(".dessert-container");
 const steakContainer = document.querySelector(".steak-container");
 const drinksContainer = document.querySelector(".drinks-container");
+const tabCounter = document.querySelector(".tab-counter");
 const featuredItemContainer = document.querySelector(
   ".featured-item-container"
 );
@@ -14,7 +15,6 @@ const dessertMenyBtn = document.querySelector(".dessert-meny-btn");
 const drinkMenyBtn = document.querySelector(".drink-meny-btn");
 const homeBtn = document.querySelector(".home-btn");
 const tabIcon = document.querySelector(".tab-icon");
->>>>>>> 8bb083a5433f4975e38e869f95f769925ab6aeb0
 
 let bbqs = db.bbqs;
 let burgers = db.burgers;
@@ -50,11 +50,6 @@ function cardTamplate(meny) {
   orderContainer.className = "order-container";
   cardSubPara.className = "menu-card-price";
   cardButton.className = "menu-button";
-
-  cardButton.addEventListener("click", () => {
-    vibrateTab();
-    updateTab(cardHeader, cardSubPara);
-  });
 
   return card;
 }
@@ -130,29 +125,6 @@ function hide() {
   drinksContainer.classList.add("display-none");
   featuredItemContainer.classList.add("display-none");
 }
-
-function vibrateTab() {
-  tabIcon.classList.add("vibrate");
-
-  setTimeout(function () {
-    tabIcon.classList.remove("vibrate");
-  }, 210);
-}
-
-function updateTab(name, price) {
-  let tabList = [];
-  tabList.push(name.textContent, price.textContent);
-  console.log(tabList);
-  console.log(name.textContent, price.textContent);
-}
-
-//  tabIcon.addEventListener("click", () => {
-//   tabIcon.classList.add("vibrate");
-
-//   setTimeout(function () {
-//     tabIcon.classList.remove("vibrate");
-//   }, 210);
-// });
 
 bbqMenyBtn.addEventListener("click", () => {
   hide();
