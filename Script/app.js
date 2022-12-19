@@ -13,7 +13,7 @@ const steakMenyBtn = document.querySelector(".steak-meny-btn");
 const dessertMenyBtn = document.querySelector(".dessert-meny-btn");
 const drinkMenyBtn = document.querySelector(".drink-meny-btn");
 const homeBtn = document.querySelector(".home-btn");
-const tabIcon = document.querySelector('.tab-icon');
+const tabIcon = document.querySelector(".tab-icon");
 
 let bbqs = db.bbqs;
 let burgers = db.burgers;
@@ -21,7 +21,7 @@ let dessert = db.desserts;
 let steaks = db.steaks;
 let drinks = db.drinks;
 
-function createCard(meny) {
+function cardTamplate(meny) {
   // CREATES A TEMPLATE FOR EACH CARD
   const card = document.createElement("article");
   const cardHeader = document.createElement("h3");
@@ -50,17 +50,22 @@ function createCard(meny) {
   cardSubPara.className = "menu-card-price";
   cardButton.className = "menu-button";
 
+  cardButton.addEventListener("click", () => {
+    vibrateTab();
+    updateTab(cardHeader, cardSubPara);
+  });
+
   return card;
 }
 
 function createFeaturedDOMCard(container) {
   //Creates cards for the featured items
   for (let i = 0; i < 1; i++) {
-    let bbqsCards = createCard(bbqs[i]);
-    let dessertCards = createCard(dessert[i]);
-    let burgersCards = createCard(burgers[i]);
-    let steaksCards = createCard(steaks[i]);
-    let drinksCards = createCard(drinks[i]);
+    let bbqsCards = cardTamplate(bbqs[i]);
+    let dessertCards = cardTamplate(dessert[i]);
+    let burgersCards = cardTamplate(burgers[i]);
+    let steaksCards = cardTamplate(steaks[i]);
+    let drinksCards = cardTamplate(drinks[i]);
 
     container.append(drinksCards);
     container.append(steaksCards);
@@ -73,7 +78,7 @@ function createFeaturedDOMCard(container) {
 function createBbqsDOMCard(container) {
   //Creates cards for the bbq meny
   for (let i = 0; i < 12; i++) {
-    let bbqsCards = createCard(bbqs[i]);
+    let bbqsCards = cardTamplate(bbqs[i]);
 
     container.append(bbqsCards);
   }
@@ -82,7 +87,7 @@ function createBbqsDOMCard(container) {
 function createDessertDOMCard(container) {
   //Creates cards for the dessert meny
   for (let i = 0; i < 12; i++) {
-    let dessertCards = createCard(dessert[i]);
+    let dessertCards = cardTamplate(dessert[i]);
 
     container.append(dessertCards);
   }
@@ -91,7 +96,7 @@ function createDessertDOMCard(container) {
 function createBurgerDOMCard(container) {
   //Creates cards for the burger meny
   for (let i = 0; i < 12; i++) {
-    let burgersCards = createCard(burgers[i]);
+    let burgersCards = cardTamplate(burgers[i]);
 
     container.append(burgersCards);
   }
@@ -100,7 +105,7 @@ function createBurgerDOMCard(container) {
 function createSteaksDOMCard(container) {
   //Creates cards for the steaks meny
   for (let i = 0; i < 12; i++) {
-    let steaksCards = createCard(steaks[i]);
+    let steaksCards = cardTamplate(steaks[i]);
 
     container.append(steaksCards);
   }
@@ -109,7 +114,7 @@ function createSteaksDOMCard(container) {
 function createDrinksDOMCard(container) {
   //Creates cards for the drinks meny
   for (let i = 0; i < 12; i++) {
-    let drinksCards = createCard(drinks[i]);
+    let drinksCards = cardTamplate(drinks[i]);
 
     container.append(drinksCards);
   }
@@ -125,13 +130,28 @@ function hide() {
   featuredItemContainer.classList.add("display-none");
 }
 
-tabIcon.addEventListener('click', () => {
-  tabIcon.classList.add('vibrate');
+function vibrateTab() {
+  tabIcon.classList.add("vibrate");
 
-  setTimeout(function(){
-    tabIcon.classList.remove('vibrate');
-}, 210);
-})
+  setTimeout(function () {
+    tabIcon.classList.remove("vibrate");
+  }, 210);
+}
+
+function updateTab(name, price) {
+  let tabList = [];
+  tabList.push(name.textContent, price.textContent);
+  console.log(tabList);
+  console.log(name.textContent, price.textContent);
+}
+
+//  tabIcon.addEventListener("click", () => {
+//   tabIcon.classList.add("vibrate");
+
+//   setTimeout(function () {
+//     tabIcon.classList.remove("vibrate");
+//   }, 210);
+// });
 
 bbqMenyBtn.addEventListener("click", () => {
   hide();
