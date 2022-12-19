@@ -4,9 +4,22 @@ const burgerContainer = document.querySelector(".burger-container");
 const dessertContainer = document.querySelector(".dessert-container");
 const steakContainer = document.querySelector(".steak-container");
 const drinksContainer = document.querySelector(".drinks-container");
+<<<<<<< HEAD
 const tabCounter = document.querySelector(".tab-counter")
 
 
+=======
+const featuredItemContainer = document.querySelector(
+  ".featured-item-container"
+);
+const bbqMenyBtn = document.querySelector(".bbq-meny-btn");
+const burgerMenyBtn = document.querySelector(".burger-meny-btn");
+const steakMenyBtn = document.querySelector(".steak-meny-btn");
+const dessertMenyBtn = document.querySelector(".dessert-meny-btn");
+const drinkMenyBtn = document.querySelector(".drink-meny-btn");
+const homeBtn = document.querySelector(".home-btn");
+const tabIcon = document.querySelector('.tab-icon');
+>>>>>>> 8bb083a5433f4975e38e869f95f769925ab6aeb0
 
 let bbqs = db.bbqs;
 let burgers = db.burgers;
@@ -46,7 +59,25 @@ function createCard(meny) {
   return card;
 }
 
+function createFeaturedDOMCard(container) {
+  //Creates cards for the featured items
+  for (let i = 0; i < 1; i++) {
+    let bbqsCards = createCard(bbqs[i]);
+    let dessertCards = createCard(dessert[i]);
+    let burgersCards = createCard(burgers[i]);
+    let steaksCards = createCard(steaks[i]);
+    let drinksCards = createCard(drinks[i]);
+
+    container.append(drinksCards);
+    container.append(steaksCards);
+    container.append(burgersCards);
+    container.append(dessertCards);
+    container.append(bbqsCards);
+  }
+}
+
 function createBbqsDOMCard(container) {
+  //Creates cards for the bbq meny
   for (let i = 0; i < 12; i++) {
     let bbqsCards = createCard(bbqs[i]);
 
@@ -55,6 +86,7 @@ function createBbqsDOMCard(container) {
 }
 
 function createDessertDOMCard(container) {
+  //Creates cards for the dessert meny
   for (let i = 0; i < 12; i++) {
     let dessertCards = createCard(dessert[i]);
 
@@ -63,6 +95,7 @@ function createDessertDOMCard(container) {
 }
 
 function createBurgerDOMCard(container) {
+  //Creates cards for the burger meny
   for (let i = 0; i < 12; i++) {
     let burgersCards = createCard(burgers[i]);
 
@@ -71,6 +104,7 @@ function createBurgerDOMCard(container) {
 }
 
 function createSteaksDOMCard(container) {
+  //Creates cards for the steaks meny
   for (let i = 0; i < 12; i++) {
     let steaksCards = createCard(steaks[i]);
 
@@ -79,6 +113,7 @@ function createSteaksDOMCard(container) {
 }
 
 function createDrinksDOMCard(container) {
+  //Creates cards for the drinks meny
   for (let i = 0; i < 12; i++) {
     let drinksCards = createCard(drinks[i]);
 
@@ -86,12 +121,67 @@ function createDrinksDOMCard(container) {
   }
 }
 
+function hide() {
+  //Adds a "display-none" class on all container
+  bbqContainer.classList.add("display-none");
+  burgerContainer.classList.add("display-none");
+  dessertContainer.classList.add("display-none");
+  steakContainer.classList.add("display-none");
+  drinksContainer.classList.add("display-none");
+  featuredItemContainer.classList.add("display-none");
+}
+
+tabIcon.addEventListener('click', () => {
+  tabIcon.classList.add('vibrate');
+
+  setTimeout(function(){
+    tabIcon.classList.remove('vibrate');
+}, 210);
+})
+
+bbqMenyBtn.addEventListener("click", () => {
+  hide();
+  //removes "display-none" class on container
+  bbqContainer.classList.remove("display-none");
+});
+
+burgerMenyBtn.addEventListener("click", () => {
+  hide();
+  //removes "display-none" class on container
+  burgerContainer.classList.remove("display-none");
+});
+
+dessertMenyBtn.addEventListener("click", () => {
+  hide();
+  //removes "display-none" class on container
+  dessertContainer.classList.remove("display-none");
+});
+
+steakMenyBtn.addEventListener("click", () => {
+  hide();
+  //removes "display-none" class on container
+  steakContainer.classList.remove("display-none");
+});
+
+drinkMenyBtn.addEventListener("click", () => {
+  hide();
+  //removes "display-none" class on container
+  drinksContainer.classList.remove("display-none");
+});
+
+homeBtn.addEventListener("click", () => {
+  hide();
+  //removes "display-none" class on container
+  featuredItemContainer.classList.remove("display-none");
+});
+
 function initializeCards() {
   createBbqsDOMCard(bbqContainer);
   createBurgerDOMCard(burgerContainer);
   createDessertDOMCard(dessertContainer);
   createSteaksDOMCard(steakContainer);
   createDrinksDOMCard(drinksContainer);
+  createFeaturedDOMCard(featuredItemContainer);
 }
 initializeCards();
 
