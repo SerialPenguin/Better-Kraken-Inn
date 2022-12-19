@@ -40,10 +40,26 @@ body {
 }
 
 .tab-icon {
-  font-size: 3em;
+  font-size: 3rem;
   font-weight: 600;
   text-shadow: #000 1px 0 10px;
+<<<<<<< HEAD
+  
+
+}
+
+.item-counter{
+  font-size: 1.5rem;
+  font-size: bold;
+  
+ 
+}
+
+.tab-counter{
+  font-size: 1.5rem;
+=======
   cursor: pointer;
+>>>>>>> 8bb083a5433f4975e38e869f95f769925ab6aeb0
 }
 
 .main-nav {
