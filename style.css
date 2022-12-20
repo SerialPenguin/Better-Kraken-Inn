@@ -52,12 +52,7 @@ header {
   text-shadow: #000 1px 0 10px;
 }
 
-.item-counter{
-  font-size: 1.5rem;
-  font-size: bold;
-}
-
-.tab-counter{
+.tab-amount{
   font-size: 1.5rem;
   font-weight: bold;
   text-shadow: 4px 4px 10px #000000;
@@ -75,12 +70,13 @@ header {
   color: white;
   padding-left: 0.5em;
   border-radius: 1px;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .total-tab-price {
   padding-left: 0.5em;
-  font-weight: bold;
+  font-weight: bolder;
+  font-size: large;
 }
 
 .main-nav {
