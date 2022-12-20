@@ -2,20 +2,21 @@
 const orderBtn = document.querySelectorAll(".menu-button");
 const foodName = document.querySelectorAll(".menu-card-header");
 const foodPrice = document.querySelectorAll(".menu-card-price");
+const tabListUl = document.querySelector(".tab-list");
+const totaltTabPrice = document.querySelector(".total-tab-price");
+const tabCounter = document.querySelector(".tab-counter");
+let tabPriceList = 0;
 
-/* Det finns index från 0 till 59 alltså 60 knappar totalt som heter "ORDER NOW". 
- [0]= "ORDER NOW" på bilden höst upp, [1] på bilden näst högst upp.
- */
-
-// Nu vill vi loopa igenom alla dessa [0] - [59] knappar för att sätta en addEventListner på samtliga "ORDER NOW"
 for (let i = 0; i < orderBtn.length; i++) {
   orderBtn[i].addEventListener("click", () => {
     vibrateTab();
-    updateTab(foodName[i], foodPrice[i]);
-    //    console.log("Vara skickad till köket") // Consol.log för att se så att knappen är aktiv
-
-    toKitchenTotal(); // anropar funktionen nedan samt loopar igen alla index i vår db array ( listan med alla rätter )
+    updateTabList(foodName[i], foodPrice[i]);
+    tabCounterUpdater();
   });
+}
+
+function tabCounterUpdater() {
+  tabCounter.textContent++;
 }
 
 function vibrateTab() {
@@ -26,11 +27,26 @@ function vibrateTab() {
   }, 1000);
 }
 
-function updateTab(name, price) {
+function totaltPrice(price) {
+  tabPriceList = tabPriceList + parseInt(price.textContent);
+
+  totaltTabPrice.textContent = `Total: ${tabPriceList}kr`;
+}
+
+function tabListLi(list) {
+  let listItem = document.createElement("li");
+  listItem.textContent = `${list[0]}, ${list[1]}kr`;
+
+  listItem.className = "tab-item";
+
+  tabListUl.append(listItem);
+}
+
+function updateTabList(name, price) {
   let tabList = [];
+  totaltPrice(price);
   tabList.push(name.textContent, price.textContent);
-  console.log(tabList);
-  console.log(name.textContent, price.textContent);
+  tabListLi(tabList);
 }
 
 /* local Storage förklarat : 

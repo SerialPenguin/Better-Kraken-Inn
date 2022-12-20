@@ -4,7 +4,6 @@ const burgerContainer = document.querySelector(".burger-container");
 const dessertContainer = document.querySelector(".dessert-container");
 const steakContainer = document.querySelector(".steak-container");
 const drinksContainer = document.querySelector(".drinks-container");
-const tabCounter = document.querySelector(".tab-counter");
 const featuredItemContainer = document.querySelector(
   ".featured-item-container"
 );
@@ -15,6 +14,7 @@ const dessertMenyBtn = document.querySelector(".dessert-meny-btn");
 const drinkMenyBtn = document.querySelector(".drink-meny-btn");
 const homeBtn = document.querySelector(".home-btn");
 const tabIcon = document.querySelector(".tab-icon");
+const tabListContainer = document.querySelector(".tab-list-container");
 
 let bbqs = db.bbqs;
 let burgers = db.burgers;
@@ -125,6 +125,15 @@ function hide() {
   drinksContainer.classList.add("display-none");
   featuredItemContainer.classList.add("display-none");
 }
+
+tabIcon.addEventListener("click", () => {
+  if (tabListContainer.classList.contains("display-none")) {
+    // checks if it has the class "display-none"
+    tabListContainer.classList.remove("display-none");
+  } else {
+    tabListContainer.classList.add("display-none");
+  }
+});
 
 bbqMenyBtn.addEventListener("click", () => {
   hide();
