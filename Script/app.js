@@ -128,6 +128,7 @@ function hide() {
 
 tabIcon.addEventListener("click", () => {
   if (tabListContainer.classList.contains("display-none")) {
+    // checks if it has the class "display-none"
     tabListContainer.classList.remove("display-none");
   } else {
     tabListContainer.classList.add("display-none");
