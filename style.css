@@ -22,6 +22,12 @@ body {
     min-height: 100vh;
 }
 
+header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--secondary-color);
+}
+
 .header-container {
   display: flex;
   flex-direction: row;
@@ -44,15 +50,11 @@ body {
   font-size: 3rem;
   font-weight: 600;
   text-shadow: #000 1px 0 10px;
-  
-
 }
 
 .item-counter{
   font-size: 1.5rem;
   font-size: bold;
-  
- 
 }
 
 .tab-counter{
@@ -88,7 +90,7 @@ body {
 }
 
 .main-content {
-  padding-bottom: 4em;
+  padding: 10.5em 0 4em 0;
 }
 
 .menu-card {
