@@ -54,6 +54,29 @@ function cardTamplate(meny) {
   return card;
 }
 
+function menuDOMCard(
+  drinksContainer,
+  steakContainer,
+  burgerContiner,
+  dessertContainer,
+  bbqContainer
+) {
+  //Creates cards for all items in the menu
+  for (let i = 0; i < 12; i++) {
+    let bbqsCards = cardTamplate(bbqs[i]);
+    let dessertCards = cardTamplate(dessert[i]);
+    let burgersCards = cardTamplate(burgers[i]);
+    let steaksCards = cardTamplate(steaks[i]);
+    let drinksCards = cardTamplate(drinks[i]);
+
+    drinksContainer.append(drinksCards);
+    steakContainer.append(steaksCards);
+    burgerContiner.append(burgersCards);
+    dessertContainer.append(dessertCards);
+    bbqContainer.append(bbqsCards);
+  }
+}
+
 function createFeaturedDOMCard(container) {
   //Creates cards for the featured items
   for (let i = 0; i < 1; i++) {
@@ -68,51 +91,6 @@ function createFeaturedDOMCard(container) {
     container.append(burgersCards);
     container.append(dessertCards);
     container.append(bbqsCards);
-  }
-}
-
-function createBbqsDOMCard(container) {
-  //Creates cards for the bbq meny
-  for (let i = 0; i < 12; i++) {
-    let bbqsCards = cardTamplate(bbqs[i]);
-
-    container.append(bbqsCards);
-  }
-}
-
-function createDessertDOMCard(container) {
-  //Creates cards for the dessert meny
-  for (let i = 0; i < 12; i++) {
-    let dessertCards = cardTamplate(dessert[i]);
-
-    container.append(dessertCards);
-  }
-}
-
-function createBurgerDOMCard(container) {
-  //Creates cards for the burger meny
-  for (let i = 0; i < 12; i++) {
-    let burgersCards = cardTamplate(burgers[i]);
-
-    container.append(burgersCards);
-  }
-}
-
-function createSteaksDOMCard(container) {
-  //Creates cards for the steaks meny
-  for (let i = 0; i < 12; i++) {
-    let steaksCards = cardTamplate(steaks[i]);
-
-    container.append(steaksCards);
-  }
-}
-
-function createDrinksDOMCard(container) {
-  //Creates cards for the drinks meny
-  for (let i = 0; i < 12; i++) {
-    let drinksCards = cardTamplate(drinks[i]);
-
-    container.append(drinksCards);
   }
 }
 
@@ -172,11 +150,13 @@ homeBtn.addEventListener("click", () => {
 });
 
 function initializeCards() {
-  createBbqsDOMCard(bbqContainer);
-  createBurgerDOMCard(burgerContainer);
-  createDessertDOMCard(dessertContainer);
-  createSteaksDOMCard(steakContainer);
-  createDrinksDOMCard(drinksContainer);
+  menuDOMCard(
+    drinksContainer,
+    steakContainer,
+    burgerContainer,
+    dessertContainer,
+    bbqContainer
+  );
   createFeaturedDOMCard(featuredItemContainer);
 }
 initializeCards();
