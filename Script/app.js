@@ -4,7 +4,6 @@ const burgerContainer = document.querySelector(".burger-container");
 const dessertContainer = document.querySelector(".dessert-container");
 const steakContainer = document.querySelector(".steak-container");
 const drinksContainer = document.querySelector(".drinks-container");
-const tabCounter = document.querySelector(".tab-counter");
 const featuredItemContainer = document.querySelector(
   ".featured-item-container"
 );

@@ -4,6 +4,7 @@ const foodName = document.querySelectorAll(".menu-card-header");
 const foodPrice = document.querySelectorAll(".menu-card-price");
 const tabListUl = document.querySelector(".tab-list");
 const totaltTabPrice = document.querySelector(".total-tab-price");
+const tabCounter = document.querySelector(".tab-counter");
 let tabPriceList = 0;
 
 /* Det finns index från 0 till 59 alltså 60 knappar totalt som heter "ORDER NOW". 
@@ -17,8 +18,12 @@ for (let i = 0; i < orderBtn.length; i++) {
     updateTab(foodName[i], foodPrice[i]);
     //    console.log("Vara skickad till köket") // Consol.log för att se så att knappen är aktiv
 
-    toKitchenTotal(); // anropar funktionen nedan samt loopar igen alla index i vår db array ( listan med alla rätter )
+    amountInTablist(); // anropar funktionen nedan samt loopar igen alla index i vår db array ( listan med alla rätter )
   });
+}
+
+function amountInTablist() {
+  tabCounter.textContent++;
 }
 
 function vibrateTab() {
@@ -59,24 +64,24 @@ This means the data stored in the browser will persist even after the browser wi
 */
 
 // Funktion för att spara alla "ORDER NOW" till local Storage
-function toKitchenTotal() {
-  let addedFromMeny = localStorage.getItem("toKitchenTotal"); // ingen bra förklaring på denna.
+// function toKitchenTotal() {
+//   let addedFromMeny = localStorage.getItem("toKitchenTotal"); // ingen bra förklaring på denna.
 
-  //console.log(typeof addedFromMeny) // Visar att det är ett OBJECT
-  //localStorage.setItem("toKitchenTotal", 1)
+//   //console.log(typeof addedFromMeny) // Visar att det är ett OBJECT
+//   //localStorage.setItem("toKitchenTotal", 1)
 
-  addedFromMeny = parseInt(addedFromMeny); // Gör om från OBJCET till INT
-  //console.log(typeof addedFromMeny) // Consolen visar nu att det är en INT istället för OBJECT
+//   addedFromMeny = parseInt(addedFromMeny); // Gör om från OBJCET till INT
+//   //console.log(typeof addedFromMeny) // Consolen visar nu att det är en INT istället för OBJECT
 
-  // if statement som lagra värdet ( antal tryckta ORDER NOW ). Antigen lagrar för första gången( första trycket) ELLER gör +1 om de redan är tryckt en gång och man trycker en andra gång +1
+//   // if statement som lagra värdet ( antal tryckta ORDER NOW ). Antigen lagrar för första gången( första trycket) ELLER gör +1 om de redan är tryckt en gång och man trycker en andra gång +1
 
-  if (addedFromMeny) {
-    localStorage.setItem("toKitchenTotal", addedFromMeny + 1); // eftersom de redan finns en lagrad, så läggs det på ett nummer + 1
-    tabCounter.textContent = addedFromMeny + 1; // Antalet plussas på uppe i header på vår sida ( ska göras om på bättre sätt )
-  } else {
-    localStorage.setItem("toKitchenTotal", 1); // första gången koden körs aktiveras denna
-    tabCounter.textContent = 1; // siffran i header kan uppdateras med antal om vi önskar ( dvs om man trycker på ORDER NOW någon mer stans)
+//   if (addedFromMeny) {
+//     localStorage.setItem("toKitchenTotal", addedFromMeny + 1); // eftersom de redan finns en lagrad, så läggs det på ett nummer + 1
+//     tabCounter.textContent = addedFromMeny + 1; // Antalet plussas på uppe i header på vår sida ( ska göras om på bättre sätt )
+//   } else {
+//     localStorage.setItem("toKitchenTotal", 1); // första gången koden körs aktiveras denna
+//     tabCounter.textContent = 1; // siffran i header kan uppdateras med antal om vi önskar ( dvs om man trycker på ORDER NOW någon mer stans)
 
-    // Vore fint att ha som på denna bild :: https://stackoverflow.com/questions/51304169/how-to-put-the-number-at-top-right-corner-of-cart-icon
-  }
-}
+//     // Vore fint att ha som på denna bild :: https://stackoverflow.com/questions/51304169/how-to-put-the-number-at-top-right-corner-of-cart-icon
+//   }
+// }
