@@ -7,12 +7,7 @@ const drinksContainer = document.querySelector(".drinks-container");
 const featuredItemContainer = document.querySelector(
   ".featured-item-container"
 );
-const bbqMenyBtn = document.querySelector(".bbq-meny-btn");
-const burgerMenyBtn = document.querySelector(".burger-meny-btn");
-const steakMenyBtn = document.querySelector(".steak-meny-btn");
-const dessertMenyBtn = document.querySelector(".dessert-meny-btn");
-const drinkMenyBtn = document.querySelector(".drink-meny-btn");
-const homeBtn = document.querySelector(".home-btn");
+const menyBtn = document.querySelectorAll(".meny-btn");
 const tabIcon = document.querySelector(".tab-icon");
 const tabListContainer = document.querySelector(".tab-list-container");
 
@@ -54,6 +49,29 @@ function cardTamplate(meny) {
   return card;
 }
 
+function menuDOMCard(
+  drinksContainer,
+  steakContainer,
+  burgerContiner,
+  dessertContainer,
+  bbqContainer
+) {
+  //Creates cards for all items in the menu
+  for (let i = 0; i < 12; i++) {
+    let bbqsCards = cardTamplate(bbqs[i]);
+    let dessertCards = cardTamplate(dessert[i]);
+    let burgersCards = cardTamplate(burgers[i]);
+    let steaksCards = cardTamplate(steaks[i]);
+    let drinksCards = cardTamplate(drinks[i]);
+
+    drinksContainer.append(drinksCards);
+    steakContainer.append(steaksCards);
+    burgerContiner.append(burgersCards);
+    dessertContainer.append(dessertCards);
+    bbqContainer.append(bbqsCards);
+  }
+}
+
 function createFeaturedDOMCard(container) {
   //Creates cards for the featured items
   for (let i = 0; i < 1; i++) {
@@ -71,51 +89,6 @@ function createFeaturedDOMCard(container) {
   }
 }
 
-function createBbqsDOMCard(container) {
-  //Creates cards for the bbq meny
-  for (let i = 0; i < 12; i++) {
-    let bbqsCards = cardTamplate(bbqs[i]);
-
-    container.append(bbqsCards);
-  }
-}
-
-function createDessertDOMCard(container) {
-  //Creates cards for the dessert meny
-  for (let i = 0; i < 12; i++) {
-    let dessertCards = cardTamplate(dessert[i]);
-
-    container.append(dessertCards);
-  }
-}
-
-function createBurgerDOMCard(container) {
-  //Creates cards for the burger meny
-  for (let i = 0; i < 12; i++) {
-    let burgersCards = cardTamplate(burgers[i]);
-
-    container.append(burgersCards);
-  }
-}
-
-function createSteaksDOMCard(container) {
-  //Creates cards for the steaks meny
-  for (let i = 0; i < 12; i++) {
-    let steaksCards = cardTamplate(steaks[i]);
-
-    container.append(steaksCards);
-  }
-}
-
-function createDrinksDOMCard(container) {
-  //Creates cards for the drinks meny
-  for (let i = 0; i < 12; i++) {
-    let drinksCards = cardTamplate(drinks[i]);
-
-    container.append(drinksCards);
-  }
-}
-
 function hide() {
   //Adds a "display-none" class on all container
   bbqContainer.classList.add("display-none");
@@ -124,6 +97,24 @@ function hide() {
   steakContainer.classList.add("display-none");
   drinksContainer.classList.add("display-none");
   featuredItemContainer.classList.add("display-none");
+}
+
+function handleNavClickFunction(i) {
+  //uses function hide() then removes the class "display-none" from the tab you pressed on
+  hide();
+  if (menyBtn[i].classList.contains("home")) {
+    featuredItemContainer.classList.remove("display-none");
+  } else if (menyBtn[i].classList.contains("bbq")) {
+    bbqContainer.classList.remove("display-none");
+  } else if (menyBtn[i].classList.contains("drink")) {
+    drinksContainer.classList.remove("display-none");
+  } else if (menyBtn[i].classList.contains("burger")) {
+    burgerContainer.classList.remove("display-none");
+  } else if (menyBtn[i].classList.contains("steak")) {
+    steakContainer.classList.remove("display-none");
+  } else if (menyBtn[i].classList.contains("dessert")) {
+    dessertContainer.classList.remove("display-none");
+  }
 }
 
 tabIcon.addEventListener("click", () => {
@@ -135,48 +126,21 @@ tabIcon.addEventListener("click", () => {
   }
 });
 
-bbqMenyBtn.addEventListener("click", () => {
-  hide();
-  //removes "display-none" class on container
-  bbqContainer.classList.remove("display-none");
-});
-
-burgerMenyBtn.addEventListener("click", () => {
-  hide();
-  //removes "display-none" class on container
-  burgerContainer.classList.remove("display-none");
-});
-
-dessertMenyBtn.addEventListener("click", () => {
-  hide();
-  //removes "display-none" class on container
-  dessertContainer.classList.remove("display-none");
-});
-
-steakMenyBtn.addEventListener("click", () => {
-  hide();
-  //removes "display-none" class on container
-  steakContainer.classList.remove("display-none");
-});
-
-drinkMenyBtn.addEventListener("click", () => {
-  hide();
-  //removes "display-none" class on container
-  drinksContainer.classList.remove("display-none");
-});
-
-homeBtn.addEventListener("click", () => {
-  hide();
-  //removes "display-none" class on container
-  featuredItemContainer.classList.remove("display-none");
-});
+for (let i = 0; i < menyBtn.length; i++) {
+  //loops through menyBtn and adds a "click" function
+  menyBtn[i].addEventListener("click", () => {
+    handleNavClickFunction(i);
+  });
+}
 
 function initializeCards() {
-  createBbqsDOMCard(bbqContainer);
-  createBurgerDOMCard(burgerContainer);
-  createDessertDOMCard(dessertContainer);
-  createSteaksDOMCard(steakContainer);
-  createDrinksDOMCard(drinksContainer);
+  menuDOMCard(
+    drinksContainer,
+    steakContainer,
+    burgerContainer,
+    dessertContainer,
+    bbqContainer
+  );
   createFeaturedDOMCard(featuredItemContainer);
 }
 initializeCards();
