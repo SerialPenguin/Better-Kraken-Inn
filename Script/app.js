@@ -8,7 +8,6 @@ const featuredItemContainer = document.querySelector(
   ".featured-item-container"
 );
 const menyBtn = document.querySelectorAll(".meny-btn");
-const homeBtn = document.querySelector(".home-btn");
 const tabIcon = document.querySelector(".tab-icon");
 const tabListContainer = document.querySelector(".tab-list-container");
 
