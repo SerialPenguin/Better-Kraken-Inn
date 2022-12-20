@@ -44,21 +44,37 @@ body {
   font-size: 3rem;
   font-weight: 600;
   text-shadow: #000 1px 0 10px;
-  
-
 }
 
 .item-counter{
   font-size: 1.5rem;
   font-size: bold;
-  
- 
 }
 
 .tab-counter{
   font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 4px 4px 10px #000000;
   cursor: pointer;
   margin-top: .5em;
+}
+
+.list-container {
+  background-color: #938a76ea;
+  border: 1.8px solid white;
+}
+
+.tab-list {
+  background-color: #938a76ea;
+  color: white;
+  padding-left: 0.5em;
+  border-radius: 1px;
+  font-weight: bold;
+}
+
+.total-tab-price {
+  padding-left: 0.5em;
+  font-weight: bold;
 }
 
 .main-nav {
@@ -185,12 +201,6 @@ footer {
     height: 20px;
     object-fit: cover;
   }
-
-  /* .container img {
-    width: 20px;
-    height: 20px;
-    object-fit: cover;
-} */
 
     .flag {
         width: 50vw;
