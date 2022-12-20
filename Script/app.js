@@ -15,6 +15,7 @@ const dessertMenyBtn = document.querySelector(".dessert-meny-btn");
 const drinkMenyBtn = document.querySelector(".drink-meny-btn");
 const homeBtn = document.querySelector(".home-btn");
 const tabIcon = document.querySelector(".tab-icon");
+const tabListContainer = document.querySelector(".tab-list-container");
 
 let bbqs = db.bbqs;
 let burgers = db.burgers;
@@ -125,6 +126,14 @@ function hide() {
   drinksContainer.classList.add("display-none");
   featuredItemContainer.classList.add("display-none");
 }
+
+tabIcon.addEventListener("click", () => {
+  if (tabListContainer.classList.contains("display-none")) {
+    tabListContainer.classList.remove("display-none");
+  } else {
+    tabListContainer.classList.add("display-none");
+  }
+});
 
 bbqMenyBtn.addEventListener("click", () => {
   hide();

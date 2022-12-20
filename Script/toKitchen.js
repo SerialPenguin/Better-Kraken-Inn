@@ -2,6 +2,9 @@
 const orderBtn = document.querySelectorAll(".menu-button");
 const foodName = document.querySelectorAll(".menu-card-header");
 const foodPrice = document.querySelectorAll(".menu-card-price");
+const tabListUl = document.querySelector(".tab-list");
+const totaltTabPrice = document.querySelector(".total-tab-price");
+let tabPriceList = 0;
 
 /* Det finns index från 0 till 59 alltså 60 knappar totalt som heter "ORDER NOW". 
  [0]= "ORDER NOW" på bilden höst upp, [1] på bilden näst högst upp.
@@ -26,10 +29,26 @@ function vibrateTab() {
   }, 1000);
 }
 
+function totaltPrice(price) {
+  tabPriceList = tabPriceList + parseInt(price.textContent);
+
+  totaltTabPrice.textContent = `Total: ${tabPriceList}kr`;
+}
+
+function tabListLi(list) {
+  let listItem = document.createElement("li");
+  listItem.textContent = `${list[0]}, ${list[1]}kr`;
+
+  tabListUl.append(listItem);
+}
+
 function updateTab(name, price) {
   let tabList = [];
+  totaltPrice(price);
   tabList.push(name.textContent, price.textContent);
+  tabListLi(tabList);
   console.log(tabList);
+  console.log(tabPriceList);
   console.log(name.textContent, price.textContent);
 }
 
