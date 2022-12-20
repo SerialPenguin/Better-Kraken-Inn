@@ -7,11 +7,7 @@ const drinksContainer = document.querySelector(".drinks-container");
 const featuredItemContainer = document.querySelector(
   ".featured-item-container"
 );
-const bbqMenyBtn = document.querySelector(".bbq-meny-btn");
-const burgerMenyBtn = document.querySelector(".burger-meny-btn");
-const steakMenyBtn = document.querySelector(".steak-meny-btn");
-const dessertMenyBtn = document.querySelector(".dessert-meny-btn");
-const drinkMenyBtn = document.querySelector(".drink-meny-btn");
+const menyBtn = document.querySelectorAll(".meny-btn");
 const homeBtn = document.querySelector(".home-btn");
 const tabIcon = document.querySelector(".tab-icon");
 const tabListContainer = document.querySelector(".tab-list-container");
@@ -104,6 +100,24 @@ function hide() {
   featuredItemContainer.classList.add("display-none");
 }
 
+function handleNavClickFunction(i) {
+  //uses function hide() then removes the class "display-none" from the tab you pressed on
+  hide();
+  if (menyBtn[i].classList.contains("home")) {
+    featuredItemContainer.classList.remove("display-none");
+  } else if (menyBtn[i].classList.contains("bbq")) {
+    bbqContainer.classList.remove("display-none");
+  } else if (menyBtn[i].classList.contains("drink")) {
+    drinksContainer.classList.remove("display-none");
+  } else if (menyBtn[i].classList.contains("burger")) {
+    burgerContainer.classList.remove("display-none");
+  } else if (menyBtn[i].classList.contains("steak")) {
+    steakContainer.classList.remove("display-none");
+  } else if (menyBtn[i].classList.contains("dessert")) {
+    dessertContainer.classList.remove("display-none");
+  }
+}
+
 tabIcon.addEventListener("click", () => {
   if (tabListContainer.classList.contains("display-none")) {
     // checks if it has the class "display-none"
@@ -113,41 +127,12 @@ tabIcon.addEventListener("click", () => {
   }
 });
 
-bbqMenyBtn.addEventListener("click", () => {
-  hide();
-  //removes "display-none" class on container
-  bbqContainer.classList.remove("display-none");
-});
-
-burgerMenyBtn.addEventListener("click", () => {
-  hide();
-  //removes "display-none" class on container
-  burgerContainer.classList.remove("display-none");
-});
-
-dessertMenyBtn.addEventListener("click", () => {
-  hide();
-  //removes "display-none" class on container
-  dessertContainer.classList.remove("display-none");
-});
-
-steakMenyBtn.addEventListener("click", () => {
-  hide();
-  //removes "display-none" class on container
-  steakContainer.classList.remove("display-none");
-});
-
-drinkMenyBtn.addEventListener("click", () => {
-  hide();
-  //removes "display-none" class on container
-  drinksContainer.classList.remove("display-none");
-});
-
-homeBtn.addEventListener("click", () => {
-  hide();
-  //removes "display-none" class on container
-  featuredItemContainer.classList.remove("display-none");
-});
+for (let i = 0; i < menyBtn.length; i++) {
+  //loops through menyBtn and adds a "click" function
+  menyBtn[i].addEventListener("click", () => {
+    handleNavClickFunction(i);
+  });
+}
 
 function initializeCards() {
   menuDOMCard(
