@@ -6,4 +6,11 @@ describe('calculate VAT', () => {
 
     expect(result).toEqual(12);
   });
+
+  it('should add 1 to counter', () => {
+    let tabCounter = 0;
+    let result = tabCounterUpdater();
+
+    expect(result).toEqual(1);
+  })
 });
