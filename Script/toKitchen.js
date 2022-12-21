@@ -55,12 +55,16 @@ function updateTabList(name, price) {
 }
 
 function confirmFood() {
-  let text = "Order/Beställ = OK ---- Cancel/Beställ inte = Avbryt.";
-  if (confirm(text) == true) {
-    text = "Maten är påväg / Your food is ordered";
-    return true;
-  } else {
-    text = "Your order is canceled / Beställningen avbruten!";
-    return false;
+    
+  if (klickac på confirm){
+    if(tabPriceList > 1000){
+        //Vänligen betala först
+        return true
+    }else{
+        return true
+    }
+  }else{
+    return false
   }
+
 }
