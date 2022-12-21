@@ -99,11 +99,21 @@ function hide() {
   featuredItemContainer.classList.add("display-none");
 }
 
+function show() {
+  //Remove class "display-none" on all container
+  featuredItemContainer.classList.remove("display-none");
+  burgerContainer.classList.remove("display-none");
+  drinksContainer.classList.remove("display-none");
+  steakContainer.classList.remove("display-none");
+  dessertContainer.classList.remove("display-none");
+  bbqContainer.classList.remove("display-none");
+}
+
 function handleNavClickFunction(i) {
   //uses function hide() then removes the class "display-none" from the tab you pressed on
   hide();
   if (menuBtn[i].classList.contains("home")) {
-    featuredItemContainer.classList.remove("display-none");
+    show();
   } else if (menuBtn[i].classList.contains("bbq")) {
     bbqContainer.classList.remove("display-none");
   } else if (menuBtn[i].classList.contains("drink")) {
