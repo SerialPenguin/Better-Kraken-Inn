@@ -361,6 +361,7 @@ footer {
     }
 
     .pop-up {
+      color: #000;
       position: fixed;
       width: 80vw;
       height: 50vh;

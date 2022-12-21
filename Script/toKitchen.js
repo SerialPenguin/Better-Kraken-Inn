@@ -5,17 +5,53 @@ const foodPrice = document.querySelectorAll(".menu-card-price");
 const tabListUl = document.querySelector(".tab-list");
 const totaltTabPrice = document.querySelector(".total-tab-price");
 const tabAmount = document.querySelector(".tab-amount");
+const popUpContainer = document.querySelector(".pop-up-container");
+const popUpBtn = document.querySelectorAll(".pop-up-btn");
 let tabPriceList = 0;
 let tabCounter = 0;
+let confirmOrder = "";
 
 for (let i = 0; i < orderBtn.length; i++) {
   orderBtn[i].addEventListener("click", () => {
-    if (confirmFood()) {
+    popUpContainer.classList.remove("display-none");
+    popUpCard(foodName[i], foodPrice[i]);
+    if (confirmFood(confirmOrder)) {
       vibrateTab();
       updateTabList(foodName[i], foodPrice[i]);
       tabCounterUpdater();
     }
   });
+}
+
+function popUpCard(name, price) {
+  const popUp = document.createElement("div");
+  let popUpHeader = document.createElement("h3");
+  let popUpPara = document.createElement("p");
+  let popUpPrice = document.createElement("p");
+  let btnConfirm = document.createElement("button");
+  let btnDecline = document.createElement("button");
+  let btnContainer = document.createElement("div");
+
+  btnContainer.appendChild(btnConfirm);
+  btnContainer.appendChild(btnDecline);
+  popUp.appendChild(popUpHeader);
+  popUp.appendChild(popUpPara);
+  popUp.appendChild(popUpPrice);
+  popUp.appendChild(btnContainer);
+
+  popUpHeader.innerHTML = "Vill du lägga till order?";
+  popUpPara.innerHTML = `${name.textContent}`;
+  popUpPrice.innerHTML = `Din nya totala blir ${
+    tabPriceList + parseInt(price.textContent)
+  }KR`;
+  btnConfirm.textContent = "Confirm";
+  btnDecline.textContent = "Decline";
+
+  popUp.className = "pop-up";
+  btnConfirm.className = "pop-up-btn confirm";
+  btnDecline.className = "pop-up-btn decline";
+
+  popUpContainer.append(popUp);
 }
 
 function tabCounterUpdater() {
@@ -54,17 +90,17 @@ function updateTabList(name, price) {
   tabListLi(tabList);
 }
 
-function confirmFood() {
-    
-  if (klickac på confirm){
-    if(tabPriceList > 1000){
-        //Vänligen betala först
-        return true
-    }else{
-        return true
-    }
-  }else{
-    return false
+function confirmFood(checker) {
+  if (checker) {
+    // if (tabPriceList > 1000) {
+    //   //Vänligen betala först
+    //   console.log("hej");
+    //   return true;
+    // } else {
+    //   return true;
+    // }
+    return true;
+  } else {
+    return false;
   }
-
 }
