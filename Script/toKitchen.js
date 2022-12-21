@@ -9,14 +9,17 @@ const popUpContainer = document.querySelector(".pop-up-container");
 const popUpBtn = document.querySelectorAll(".pop-up-btn");
 let tabPriceList = 0;
 let tabCounter = 0;
+let confirmOrder = "";
 
 for (let i = 0; i < orderBtn.length; i++) {
   orderBtn[i].addEventListener("click", () => {
     popUpContainer.classList.remove("display-none");
     popUpCard(foodName[i], foodPrice[i]);
-    vibrateTab();
-    updateTabList(foodName[i], foodPrice[i]);
-    tabCounterUpdater();
+    if (confirmFood(confirmOrder)) {
+      vibrateTab();
+      updateTabList(foodName[i], foodPrice[i]);
+      tabCounterUpdater();
+    }
   });
 }
 
@@ -43,9 +46,6 @@ function popUpCard(name, price) {
   }KR`;
   btnConfirm.textContent = "Confirm";
   btnDecline.textContent = "Decline";
-  btnConfirm.addEventListener("click", () => {
-    popUpContainer.classList.add("display-none");
-  });
 
   popUp.className = "pop-up";
   btnConfirm.className = "pop-up-btn confirm";
@@ -90,17 +90,17 @@ function updateTabList(name, price) {
   tabListLi(tabList);
 }
 
-function confirmFood() {
-    
-  if (klickac på confirm){
-    if(tabPriceList > 1000){
-        //Vänligen betala först
-        return true
-    }else{
-        return true
-    }
-  }else{
-    return false
+function confirmFood(checker) {
+  if (checker) {
+    // if (tabPriceList > 1000) {
+    //   //Vänligen betala först
+    //   console.log("hej");
+    //   return true;
+    // } else {
+    //   return true;
+    // }
+    return true;
+  } else {
+    return false;
   }
-
 }
