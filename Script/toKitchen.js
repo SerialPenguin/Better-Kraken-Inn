@@ -27,7 +27,7 @@ function vibrateTab() {
 
   setTimeout(function () {
     tabIcon.classList.remove("vibrate");
-  }, 1000);
+  }, 260);
 }
 
 function totaltPrice(price) {
