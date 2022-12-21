@@ -134,7 +134,7 @@ for (let i = 0; i < menuBtn.length; i++) {
 }
 
 function initializeCards() {
-  menuDOMCard(
+  createMenuDOMCard(
     drinksContainer,
     steakContainer,
     burgerContainer,
