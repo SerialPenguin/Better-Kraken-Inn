@@ -8,9 +8,11 @@ const tabAmount = document.querySelector(".tab-amount");
 const popUpContainer = document.querySelector(".pop-up-container");
 const btnContainer = document.querySelector(".btn-container");
 const popUpBtn = document.querySelectorAll(".pop-up-btn");
+
 let tabPriceList = 0;
 let tabCounter = 0;
 let tabList = [];
+
 for (let i = 0; i < orderBtn.length; i++) {
   orderBtn[i].addEventListener("click", () => {
     popUpCard(foodName[i], foodPrice[i]);
@@ -34,7 +36,7 @@ function popUpCard(name, price) {
   popUpPara.innerHTML = `${name.textContent}`;
   popUpPrice.innerHTML = `Din nya totala blir ${
     tabPriceList + parseInt(price.textContent)
-  }KR`;
+  }Kr`;
 
   popUp.className = "pop-up";
   popUpContainer.append(popUp);
@@ -82,12 +84,18 @@ function updateTabList() {
 function handlePopUpClickFunction(i) {
   if (popUpBtn[i].classList.contains("confirm")) {
     confirmFood(true);
+    // if (tabPriceList > 100) {
+    //   popUpPayCard();
+    // } else {
+    //   confirmFood(true);
+    // }
   } else {
+    return false;
   }
 }
 
 for (let i = 0; i < popUpBtn.length; i++) {
-  //loops through menyBtn and adds a "click" function
+  //loops through popUpBtn and adds a "click" function
   popUpBtn[i].addEventListener("click", () => {
     popUpContainer.classList.add("display-none");
     handlePopUpClickFunction(i);
@@ -99,15 +107,7 @@ function confirmFood(checker) {
     vibrateTab();
     updateTabList();
     tabCounterUpdater();
-    if (tabPriceList > 1000) {
-      //Vänligen betala först
-      console.log("hej");
-      return true;
-    } else {
-      return true;
-    }
     console.log(tabPriceList);
-    return true;
   } else {
     return false;
   }
