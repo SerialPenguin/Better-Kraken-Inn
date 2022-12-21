@@ -9,6 +9,7 @@ const popUpContainer = document.querySelector(".pop-up-container");
 const btnContainer = document.querySelector(".btn-container");
 const popUpBtn = document.querySelectorAll(".pop-up-btn");
 const btnDecline = document.querySelector(".decline");
+const payBtn = document.querySelector(".order-btn");
 
 let tabPriceList = 0;
 let tabCounter = 0;
@@ -23,6 +24,21 @@ for (let i = 0; i < orderBtn.length; i++) {
     }
   });
 }
+
+function clearTabList() {
+  let clearTab = document.querySelectorAll(".tab-item");
+  tabPriceList = 0;
+  tabAmount.textContent = "";
+  totaltTabPrice.textContent = "";
+
+  for (let clearTabs of clearTab) {
+    clearTabs.remove();
+  }
+}
+
+payBtn.addEventListener("click", () => {
+  clearTabList();
+});
 
 function popUpCard(name, price) {
   popUpContainer.classList.remove("display-none");
