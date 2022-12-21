@@ -31,7 +31,7 @@ function cardTamplate(menu) {
   cardHeader.textContent = menu.name;
   cardPara.textContent = menu.dsc;
   cardSubPara.textContent = menu.price;
-  cardButton.textContent = "ORDER NOW!";
+  cardButton.textContent = "BESTÄLL NU!";
 
   card.appendChild(cardHeader);
   card.appendChild(cardPara);

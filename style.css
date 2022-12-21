@@ -224,6 +224,16 @@ footer {
     .goog-te-banner-frame.skiptranslate {
       display: none !important;
       } 
+    
+      #google_translate_element{width:300px;float:right;text-align:right;display:none}
+      .goog-te-banner-frame.skiptranslate { display: none !important;} 
+      body { top: 0px !important; }
+      #goog-gt-tt{display: none !important; top: 0px !important; } 
+      .goog-tooltip skiptranslate{display: none !important; top: 0px !important; } 
+      .activity-root { display: hide !important;} 
+      .status-message { display: hide !important;}
+      .started-activity-container { display: hide !important;}
+
   body {
       top: 0px !important; 
       }
@@ -357,3 +367,4 @@ footer {
       background-color: #FFF;
       z-index: 1;
     }  */
+
