@@ -8,6 +8,8 @@ const tabAmount = document.querySelector(".tab-amount");
 const popUpContainer = document.querySelector(".pop-up-container");
 const btnContainer = document.querySelector(".btn-container");
 const popUpBtn = document.querySelectorAll(".pop-up-btn");
+const btnDecline = document.querySelector(".decline");
+const payBtn = document.querySelector(".order-btn");
 
 let tabPriceList = 0;
 let tabCounter = 0;
@@ -17,8 +19,26 @@ for (let i = 0; i < orderBtn.length; i++) {
   orderBtn[i].addEventListener("click", () => {
     popUpCard(foodName[i], foodPrice[i]);
     tabInfo(foodName[i], foodPrice[i]);
+    if (tabRoof()) {
+      tabRoof();
+    }
   });
 }
+
+function clearTabList() {
+  let clearTab = document.querySelectorAll(".tab-item");
+  tabPriceList = 0;
+  tabAmount.textContent = "";
+  totaltTabPrice.textContent = "";
+
+  for (let clearTabs of clearTab) {
+    clearTabs.remove();
+  }
+}
+
+payBtn.addEventListener("click", () => {
+  clearTabList();
+});
 
 function popUpCard(name, price) {
   popUpContainer.classList.remove("display-none");
@@ -32,14 +52,31 @@ function popUpCard(name, price) {
   popUp.appendChild(popUpPrice);
   popUp.appendChild(btnContainer);
 
-  popUpHeader.innerHTML = "Vill du lägga till order?";
-  popUpPara.innerHTML = `${name.textContent}`;
-  popUpPrice.innerHTML = `Din nya totala blir ${
-    tabPriceList + parseInt(price.textContent)
-  }Kr`;
+  if (tabRoof()) {
+    popUpHeader.innerHTML = "Vill du lägga till order?";
+    popUpPara.innerHTML = `${name.textContent}`;
+    popUpPrice.innerHTML = `Din nota är över 1000Kr och din nya totala blir ${
+      tabPriceList + parseInt(price.textContent)
+    }Kr vill du fortsätta?`;
+  } else {
+    popUpHeader.innerHTML = "Vill du lägga till order?";
+    popUpPara.innerHTML = `${name.textContent}`;
+    popUpPrice.innerHTML = `Din nya totala blir ${
+      tabPriceList + parseInt(price.textContent)
+    }Kr`;
+  }
 
   popUp.className = "pop-up";
   popUpContainer.append(popUp);
+}
+
+function tabRoof() {
+  if (tabPriceList > 1000) {
+    btnDecline.textContent = "Pay now";
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function tabCounterUpdater() {
@@ -84,11 +121,8 @@ function updateTabList() {
 function handlePopUpClickFunction(i) {
   if (popUpBtn[i].classList.contains("confirm")) {
     confirmFood(true);
-    // if (tabPriceList > 100) {
-    //   popUpPayCard();
-    // } else {
-    //   confirmFood(true);
-    // }
+  } else if (tabRoof() && popUpBtn[i].classList.contains("decline")) {
+    tabListContainer.classList.remove("display-none");
   } else {
     return false;
   }
