@@ -10,9 +10,11 @@ let tabCounter = 0;
 
 for (let i = 0; i < orderBtn.length; i++) {
   orderBtn[i].addEventListener("click", () => {
-    vibrateTab();
-    updateTabList(foodName[i], foodPrice[i]);
-    tabCounterUpdater();
+    if (confirmFood()) {
+      vibrateTab();
+      updateTabList(foodName[i], foodPrice[i]);
+      tabCounterUpdater();
+    }
   });
 }
 
@@ -27,7 +29,7 @@ function vibrateTab() {
 
   setTimeout(function () {
     tabIcon.classList.remove("vibrate");
-  }, 1000);
+  }, 260);
 }
 
 function totaltPrice(price) {
@@ -50,4 +52,15 @@ function updateTabList(name, price) {
   totaltPrice(price);
   tabList.push(name.textContent, price.textContent);
   tabListLi(tabList);
+}
+
+function confirmFood() {
+  let text = "Order/Beställ = OK ---- Cancel/Beställ inte = Avbryt.";
+  if (confirm(text) == true) {
+    text = "Maten är påväg / Your food is ordered";
+    return true;
+  } else {
+    text = "Your order is canceled / Beställningen avbruten!";
+    return false;
+  }
 }
