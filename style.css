@@ -264,9 +264,12 @@ footer {
         display: none;
         position: absolute;
         background-color: #938a76ea;
-        min-width: 115px;
+        width: 200px;
+        margin-left: -1.8em;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
+        text-align: center;
+        font-size: larger;
       }
       
       .dropdown-content a {
