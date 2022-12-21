@@ -14,16 +14,20 @@
     <title>the Kraken Inn</title>
   </head>
   <body>
+    <div class="pop-up-container">
+      <div class="pop-up">
+      </div>
+    </div>
     <header>
       <div class="header-container">
         <h1 class="main-header home meny-btn">The Kraken Inn</h1>
         <span class="tab-amount"></span>
         <span class="tab-icon">&#128456;</span>
         <div class="tab-list-container display-none">
-        <div class="list-container">
-          <ul class="tab-list"></ul>
-          <span class="total-tab-price"></span>
-        </div>
+          <div class="list-container">
+            <ul class="tab-list"></ul>
+            <span class="total-tab-price"></span>
+          </div>
         </div>
       </div>
       
@@ -53,6 +57,7 @@
         <section class="steak-container display-none"><h2 class="container-header">Steaks</h2></section>
         <section class="drinks-container display-none"><h2 class="container-header">Drinks</h2></section>
       </main>
+    </div>
       <footer>
         <div class="container">
           <form action="/" method="GET" class="form">
@@ -62,17 +67,16 @@
               </button>
               <div id="google_translate_element"></div>
               <script type="text/javascript">
-                 function googleTranslateElementInit() {
-                     new google.translate.TranslateElement({ pageLanguage: 'sv' }, 'google_translate_element');
-                 }
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({ pageLanguage: 'sv' }, 'google_translate_element');
+                }
               </script>
               <script type="text/javascript"
-                 src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
               <div class ="flag">
-               <a href="#" class ="flag_link sv" data-lang="sv"> <img class ="img-fluid" src="assets/Flag_of_Sweden.svg.png"></a>
+              <a href="#" class ="flag_link sv" data-lang="sv"> <img class ="img-fluid" src="assets/Flag_of_Sweden.svg.png"></a>
                 <a href="#" class ="flag_link en" data-lang="en"> <img class ="img-fluid" src="assets/Flag_of_the_United_Kingdom.svg.webp"></a>
             </div>
-        </div>
       </footer>
   </body>
 </html>

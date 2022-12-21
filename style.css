@@ -326,3 +326,14 @@ footer {
       border: 1px solid var(--text-color);
       box-shadow: 0 0 2em black;
     }
+
+    .pop-up-container {}
+
+    .pop-up {
+      position: fixed;
+      width: 80vw;
+      height: calc(100vh - 20vw);
+      margin: 10vw;
+      background-color: #FFF;
+      z-index: 1;
+    }
