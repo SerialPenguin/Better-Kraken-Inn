@@ -7,7 +7,7 @@ const drinksContainer = document.querySelector(".drinks-container");
 const featuredItemContainer = document.querySelector(
   ".featured-item-container"
 );
-const menyBtn = document.querySelectorAll(".meny-btn");
+const menuBtn = document.querySelectorAll(".menu-btn");
 const tabIcon = document.querySelector(".tab-icon");
 const tabListContainer = document.querySelector(".tab-list-container");
 
@@ -17,7 +17,7 @@ let dessert = db.desserts;
 let steaks = db.steaks;
 let drinks = db.drinks;
 
-function cardTamplate(meny) {
+function cardTamplate(menu) {
   // CREATES A TEMPLATE FOR EACH CARD
   const card = document.createElement("article");
   const cardHeader = document.createElement("h3");
@@ -26,11 +26,11 @@ function cardTamplate(meny) {
   const cardButton = document.createElement("button");
   const orderContainer = document.createElement("div");
 
-  card.style.backgroundImage = `url('${meny.img}')`;
+  card.style.backgroundImage = `url('${menu.img}')`;
 
-  cardHeader.textContent = meny.name;
-  cardPara.textContent = meny.dsc;
-  cardSubPara.textContent = meny.price;
+  cardHeader.textContent = menu.name;
+  cardPara.textContent = menu.dsc;
+  cardSubPara.textContent = menu.price;
   cardButton.textContent = "ORDER NOW!";
 
   card.appendChild(cardHeader);
@@ -49,7 +49,7 @@ function cardTamplate(meny) {
   return card;
 }
 
-function menuDOMCard(
+function createMenuDOMCard(
   drinksContainer,
   steakContainer,
   burgerContiner,
@@ -102,17 +102,17 @@ function hide() {
 function handleNavClickFunction(i) {
   //uses function hide() then removes the class "display-none" from the tab you pressed on
   hide();
-  if (menyBtn[i].classList.contains("home")) {
+  if (menuBtn[i].classList.contains("home")) {
     featuredItemContainer.classList.remove("display-none");
-  } else if (menyBtn[i].classList.contains("bbq")) {
+  } else if (menuBtn[i].classList.contains("bbq")) {
     bbqContainer.classList.remove("display-none");
-  } else if (menyBtn[i].classList.contains("drink")) {
+  } else if (menuBtn[i].classList.contains("drink")) {
     drinksContainer.classList.remove("display-none");
-  } else if (menyBtn[i].classList.contains("burger")) {
+  } else if (menuBtn[i].classList.contains("burger")) {
     burgerContainer.classList.remove("display-none");
-  } else if (menyBtn[i].classList.contains("steak")) {
+  } else if (menuBtn[i].classList.contains("steak")) {
     steakContainer.classList.remove("display-none");
-  } else if (menyBtn[i].classList.contains("dessert")) {
+  } else if (menuBtn[i].classList.contains("dessert")) {
     dessertContainer.classList.remove("display-none");
   }
 }
@@ -126,9 +126,9 @@ tabIcon.addEventListener("click", () => {
   }
 });
 
-for (let i = 0; i < menyBtn.length; i++) {
+for (let i = 0; i < menuBtn.length; i++) {
   //loops through menyBtn and adds a "click" function
-  menyBtn[i].addEventListener("click", () => {
+  menuBtn[i].addEventListener("click", () => {
     handleNavClickFunction(i);
   });
 }
