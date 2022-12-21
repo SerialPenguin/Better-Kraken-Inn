@@ -25,7 +25,9 @@ body {
 header {
   position: fixed;
   width: 100%;
-  background-color: var(--secondary-color);
+  /* background-color: var(--secondary-color); */
+  background-image: url(assets/smallkraken.png);
+  background-size: 100%;
 }
 
 .header-container {
