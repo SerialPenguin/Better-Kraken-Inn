@@ -22,12 +22,19 @@ body {
     min-height: 100vh;
 }
 
+header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--secondary-color);
+}
+
 .header-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   line-height: 3em;
+  position: relative;
 }
 
 .main-header {
@@ -43,21 +50,33 @@ body {
   font-size: 3rem;
   font-weight: 600;
   text-shadow: #000 1px 0 10px;
-  
-
 }
 
-.item-counter{
+.tab-amount{
   font-size: 1.5rem;
-  font-size: bold;
-  
- 
-}
-
-.tab-counter{
-  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 4px 4px 10px #000000;
   cursor: pointer;
   margin-top: .5em;
+}
+
+.list-container {
+  background-color: #938a76ea;
+  border: 1.8px solid white;
+}
+
+.tab-list {
+  background-color: #938a76ea;
+  color: white;
+  padding-left: 0.5em;
+  border-radius: 1px;
+  font-weight: bolder;
+}
+
+.total-tab-price {
+  padding-left: 0.5em;
+  font-weight: bolder;
+  font-size: large;
 }
 
 .main-nav {
@@ -79,7 +98,7 @@ body {
     border: 1px solid #FFF;
     border-bottom: none;
     border-radius: 10px 10px 0 0;
-    padding: 0 1em;
+    padding-top: 0.2em;
     width: 30%;
     text-align: center;
     line-height: 2em;
@@ -87,7 +106,7 @@ body {
 }
 
 .main-content {
-  padding-bottom: 4em;
+  padding: 10.5em 0 4em 0;
 }
 
 .menu-card {
@@ -185,12 +204,6 @@ footer {
     object-fit: cover;
   }
 
-  /* .container img {
-    width: 20px;
-    height: 20px;
-    object-fit: cover;
-} */
-
     .flag {
         width: 50vw;
     }
@@ -281,4 +294,35 @@ footer {
     
     .vibrate {
       animation: vibrate 0.2s linear;
+    }
+
+    .tab-list-container{
+      top: 5em;
+      width: 50%;
+      right: 0;
+      position: absolute;
+      z-index: 1;
+      background-color: white;
+      color: #000000;
+    }
+
+    .tab-list{
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .total-tab-price{
+      border-top: #000 1px solid;
+    }
+
+    .container-header{
+      padding: 0.5em;
+      text-align: center;
+      font-weight: bolder;
+      font-size: 2em;
+      color: var(--text-color);
+      background-color: var(--secondary-color);
+      border-radius: 2em;
+      border: 1px solid var(--text-color);
+      box-shadow: 0 0 2em black;
     }
