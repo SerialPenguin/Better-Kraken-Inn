@@ -10,9 +10,7 @@ let tabCounter = 0;
 
 for (let i = 0; i < orderBtn.length; i++) {
   orderBtn[i].addEventListener("click", () => {
-    vibrateTab();
-    updateTabList(foodName[i], foodPrice[i]);
-    tabCounterUpdater();
+    confirmFood()
   });
 }
 
@@ -51,3 +49,18 @@ function updateTabList(name, price) {
   tabList.push(name.textContent, price.textContent);
   tabListLi(tabList);
 }
+
+function confirmFood() {
+    let text = "Order/Beställ = OK ---- Cancel/Beställ inte = Avbryt.";
+    if (confirm(text) == true) {
+       
+        vibrateTab();
+        updateTabList(foodName[i], foodPrice[i]);
+        tabCounterUpdater();
+        text = "Maten är påväg / Your food is ordered";
+    } else {
+        text = "Your order is canceled / Beställningen avbruten!";
+    }
+  }
+
+ 
