@@ -368,6 +368,7 @@ footer {
       position: fixed;
       width: 80vw;
       margin: 10vw;
+      border-radius: 10px;
       background-color: #FFF;
       z-index: 1;
       text-align: center;
