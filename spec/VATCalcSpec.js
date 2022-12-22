@@ -6,9 +6,7 @@ describe("calculate VAT", () => {
 
     expect(result).toEqual(12);
   });
-});
 
-describe("calculate VAT", () => {
   it("VAT should be an INT", () => {
     let price = 112;
 
