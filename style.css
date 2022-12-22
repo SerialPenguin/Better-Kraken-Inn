@@ -380,10 +380,10 @@ footer {
 
     .pop-up h3 {
       font-size: 1.5em;
+      font-weight: 600;
     }
 
     .confirm, .decline {
       width: 30%;
-      height: 2em;
     }
 
