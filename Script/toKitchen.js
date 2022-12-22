@@ -31,6 +31,7 @@ function clearTabList() {
   tabAmount.textContent = "";
   totaltTabPrice.textContent = "";
   tabCounter = 0;
+  btnDecline.textContent = "Decline";
 
   for (let clearTabs of clearTab) {
     clearTabs.remove();
@@ -72,7 +73,7 @@ function popUpCard(name, price) {
 }
 
 function tabRoof() {
-  if (tabPriceList > 1000) {
+  if (tabPriceList > 150) {
     btnDecline.textContent = "Pay now";
     return true;
   } else {
