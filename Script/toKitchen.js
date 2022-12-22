@@ -73,7 +73,7 @@ function popUpCard(name, price) {
 }
 
 function tabRoof() {
-  if (tabPriceList > 150) {
+  if (tabPriceList > 1000) {
     btnDecline.textContent = "Pay now";
     return true;
   } else {
