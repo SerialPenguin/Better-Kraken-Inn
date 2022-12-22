@@ -7,57 +7,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="Script/db.js" defer></script>
-    <script src="Script/app.js" defer></script>
+   <script src="Script/app.js" defer></script>
+    <script src="Script/toKitchen.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <title>the Kraken Inn</title>
   </head>
   <body>
-    <header>
-      <h1 class="main-header">The Kraken Inn</h1>
-      <div class="language-toggle">
-        <a href=""><img src=""></a>
+    <div class="pop-up-container display-none">
+      <div class="btn-container">
+        <button class="pop-up-btn confirm ">Confirm</button>
+        <button class="pop-up-btn decline ">Decline</button>
       </div>
+      </div>
+    </div>
+    <header>
+      <div class="header-container">
+        <h1 class="main-header home menu-btn">The Kraken Inn</h1>
+        <span class="tab-amount"></span>
+        <span class="tab-icon">&#128456;</span>
+        <div class="tab-list-container display-none">
+          <div class="list-container">
+            <ul class="tab-list"></ul>
+            <span class="total-tab-price"></span>
+            <button class="order-btn">Check out</button>
+          </div>
+        </div>
+      </div>
+      
       <nav class="main-nav">
         <ul class="nav-list">
-          <li class="list-item">Hem</li>
+          <li class="list-item home menu-btn">Hem</li>
           <div class="dropdown-menu">
             <button class="dropdown-btn">Mat</button>
             <div class="dropdown-content">
-              <a href="#">BBQ</a>
-              <a href="#">Burger</a>
-              <a href="#">Steak</a>
-              <a href="#">Dessert</a>
+              <a class="bbq menu-btn" href="#">BBQ</a>
+              <a class="burger menu-btn" href="#">Burger</a>
+              <a class="steak menu-btn" href="#">Steak</a>
+              <a class="dessert menu-btn" href="#">Dessert</a>
               <!-- <li class="list-item">Mat</li> -->
             </div>
           </div>
-          <li class="list-item">Dryck</li>
+          <li class="list-item drink menu-btn">Dryck</li>
         </ul>
       </nav>
       </header>
       <main class="main-content">
         <!-- Generera innehållet i Javascript -->¨
+        <section class="featured-item-container"><h2 class="container-header">Rekommenderas</h2></section>
+        <section class="bbq-container "><h2 class="container-header">BBQ</h2></section>
+        <section class="burger-container "><h2 class="container-header">Burgers</h2></section>
+        <section class="dessert-container "><h2 class="container-header">Desserts</h2></section>
+        <section class="steak-container "><h2 class="container-header">Steaks</h2></section>
+        <section class="drinks-container "><h2 class="container-header">Drinks</h2></section>
       </main>
+    </div>
       <footer>
         <div class="container">
           <form action="/" method="GET" class="form">
-            <input type="search" placeholder="Sök" class="search-field" />
+            <input id="searchbar" type="text" name="search" onkeyup="search_product()" placeholder="Sök" class="search-field" />
             <button type="submit" class="search-button">
               <img class="search-img" src="assets/search.webp">
               </button>
               <div id="google_translate_element"></div>
               <script type="text/javascript">
-                 function googleTranslateElementInit() {
-                     new google.translate.TranslateElement({ pageLanguage: 'sv' }, 'google_translate_element');
-                 }
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({ pageLanguage: 'sv' }, 'google_translate_element');
+                }
               </script>
               <script type="text/javascript"
-                 src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
               <div class ="flag">
-               <a href="#" class ="flag_link sv" data-lang="sv"> <img class ="img-fluid" src="assets/Flag_of_Sweden.svg.png"></a>
+              <a href="#" class ="flag_link sv" data-lang="sv"> <img class ="img-fluid" src="assets/Flag_of_Sweden.svg.png"></a>
                 <a href="#" class ="flag_link en" data-lang="en"> <img class ="img-fluid" src="assets/Flag_of_the_United_Kingdom.svg.webp"></a>
             </div>
-        </div>
       </footer>
   </body>
 </html>
