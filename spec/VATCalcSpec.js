@@ -7,3 +7,14 @@ describe("calculate VAT", () => {
     expect(result).toEqual(12);
   });
 });
+
+describe("calculate VAT", () => {
+  it("VAT should be an INT", () => {
+    let price = 112;
+
+    let result = calcVAT(price);
+
+    expect(result).toEqual(jasmine.any(Number));
+  });
+});
+
