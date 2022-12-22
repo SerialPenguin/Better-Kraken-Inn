@@ -30,6 +30,7 @@ function clearTabList() {
   tabPriceList = 0;
   tabAmount.textContent = "";
   totaltTabPrice.textContent = "";
+  tabCounter = 0;
 
   for (let clearTabs of clearTab) {
     clearTabs.remove();
@@ -102,6 +103,7 @@ function totaltPrice(price) {
 function tabListLi(list) {
   let listItem = document.createElement("li");
   listItem.textContent = `${list[0]}, ${list[1]}kr`;
+  console.log(`${list[0]}, ${list[1]}kr`);
 
   listItem.className = "tab-item";
 
@@ -141,7 +143,6 @@ function confirmFood(checker) {
     vibrateTab();
     updateTabList();
     tabCounterUpdater();
-    console.log(tabPriceList);
   } else {
     return false;
   }
